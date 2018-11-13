@@ -1,56 +1,56 @@
 import {TChartData} from './chart';
 
 export interface IIndicatorDataMeta {
-  temperature: string
-  humidity: string
-  [key: string]: string
+  temperature: string;
+  humidity: string;
+  [key: string]: string;
 }
 
 export interface IIndicatorData {
-  temperature: number
-  humidity: number
-  [key: string]: number
+  temperature: number;
+  humidity: number;
+  [key: string]: number;
 }
 
 export interface IIndicatorValue {
-  key: string
-  value: number
+  key: string;
+  value: number;
 }
 
 export interface ICardDataGraph {
-  type: string
-  values: TChartData
+  type: string;
+  values: TChartData;
 }
 
 interface ICardDataTrack {
-  name: string,
-  length: string
+  name: string;
+  length: string;
 }
 
 export interface ICardDataMusic {
-  albumcover: string
-  artist: string
-  track: ICardDataTrack
-  volume: number
+  albumcover: string;
+  artist: string;
+  track: ICardDataTrack;
+  volume: number;
 }
 
 export interface ICardDataButtons {
-  buttons: string[]
+  buttons: string[];
 }
 
 export interface ICardDataCamera {
-  image: string
+  image: string;
 }
 
 export type TCardData = ICardDataGraph | IIndicatorData | ICardDataMusic | ICardDataButtons | ICardDataCamera;
 
 export interface ICardContent {
-  type: 'info' | 'critical'
-  title: string
-  icon: string
-  source: string
-  time: string
-  description: string | null
-  data?: TCardData
-  size: 's' | 'm' | 'l'
+  type: 'info' | 'critical';
+  title: string;
+  icon: string;
+  source: string;
+  time: string;
+  description: string | null;
+  data?: TCardData;
+  size: 's' | 'm' | 'l';
 }

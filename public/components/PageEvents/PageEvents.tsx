@@ -15,7 +15,7 @@ const cards = events.map((el, i) => (
     mode={el.type}
     description={el.description}
     date={el.time}
-    data={JSON.stringify(el.data)}
+    data={el.data}
     size={el.size}
     source={el.source}
     className={cnPageEvents('ContentItem')}

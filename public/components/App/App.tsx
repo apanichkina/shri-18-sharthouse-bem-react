@@ -23,13 +23,13 @@ const LINKS_FOOTER = [
 
 export interface IAppProps {
   className?: string;
-  inBody: boolean
+  inBody: boolean;
 }
 
 export const App: React.SFC<IAppProps> = (props) => (
   <div className={cnApp({inBody: props.inBody})}>
     <Header className={cnApp('Header')} links={LINKS_HEADER}/>
-    <Page title="Events" className={cnApp('Content')}>
+    <Page title="Лента событий" className={cnApp('Content')}>
       <PageEvents/>
     </Page>
     <Footer className={cnApp('Footer')} links={LINKS_FOOTER}/>

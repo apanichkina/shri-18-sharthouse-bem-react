@@ -2,6 +2,8 @@ import React from 'react';
 import {cn} from '@bem-react/classname';
 // import {withBemMod} from '@bem-react/core';
 import {Icon} from '../Icon/Icon';
+import {Chart} from '../Chart/Chart';
+import {prepareDataForChart} from '../../utils/chart';
 import './Card.css';
 
 const cnCard = cn('Card');
@@ -14,9 +16,24 @@ export interface ICardProps {
   title: string;
   source: string;
   description: string | null;
-  data?: any
-  icon: string
+  data?: any;
+  icon: string;
 }
+
+const getData = (data: any) => {
+  if (!data) {
+    return null;
+  }
+
+  if (data.type === 'graph') {
+    const parsedData: Chart.ChartDataSets[] = prepareDataForChart(data.values);
+
+    return <Chart datasets={parsedData} width={200} height={200}/>;
+  }
+  return (
+    JSON.stringify(data)
+  );
+};
 
 const getBody = (props: ICardProps) => {
   return (
@@ -25,7 +42,7 @@ const getBody = (props: ICardProps) => {
         {props.description}
       </div>
       <div className={cnCard('Data')}>
-        {props.data}
+        {getData(props.data)}
       </div>
     </div>
   );

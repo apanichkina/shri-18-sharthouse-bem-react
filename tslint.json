@@ -12,7 +12,7 @@
     "no-shadowed-variable": false,
     "no-empty-interface": false,
     "no-object-literal-type-assertion": false,
-    "semicolon": [true, "always", "ignore-interfaces"],
+    "semicolon": [true, "always"],
     "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
     "no-debugger": false,
     "jsx-no-lambda": true,
