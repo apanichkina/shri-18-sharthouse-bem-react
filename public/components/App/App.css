@@ -1,0 +1,42 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fff;
+  overflow-x: hidden;
+  color: #333;
+  user-select: none;
+  -ms-overflow-style: none;
+  font: 14px/16px YandexSans, Arial, Helvetica, sans-serif;
+}
+
+.App_inBody {
+  margin: -8px;
+}
+
+.App-Header {
+  height: 92px;
+  z-index: 11;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  padding: 0 40px;
+}
+
+.App-Content {
+  padding-top: 92px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 75%;
+  flex: 1 0 auto;
+
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.App-Footer {
+  padding: 0 40px;
+}
+

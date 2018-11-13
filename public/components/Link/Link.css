@@ -1,0 +1,8 @@
+.Link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Link:hover {
+  color: red !important;
+}
