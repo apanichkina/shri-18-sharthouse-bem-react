@@ -19,7 +19,7 @@ const getLinks = (links: INavData[]) => {
 
 export interface IHeaderProps {
   className?: string;
-  links: INavData[]
+  links: INavData[];
 }
 
 export const Header: React.SFC<IHeaderProps> = (props) => (

@@ -24,7 +24,7 @@ module.exports = {
         test: /\.css$/,
         use: ['css-hot-loader'].concat(cssExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader?url=false'],
+          use: ['css-loader?url=false', 'postcss-loader'],
         })),
       },
       {

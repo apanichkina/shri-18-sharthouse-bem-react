@@ -38,7 +38,7 @@ export const Chart: React.SFC<IChartProps> = (props) => {
   };
 
   return (
-    <div className={cnChart()}>
+    <div className={cnChart(null, [props.className])}>
       <Line
         width={props.width}
         height={props.height}

@@ -3,6 +3,7 @@ import {cn} from '@bem-react/classname';
 // import {withBemMod} from '@bem-react/core';
 import {Icon} from '../Icon/Icon';
 import {Chart} from '../Chart/Chart';
+import {Music} from '../Music/Music';
 import {prepareDataForChart} from '../../utils/chart';
 import './Card.css';
 
@@ -23,6 +24,18 @@ export interface ICardProps {
 const getData = (data: any) => {
   if (!data) {
     return null;
+  }
+
+  if (data.albumcover) {
+    return (
+      <Music
+        artist={data.artist}
+        name={data.track.name}
+        length={data.track.length}
+        volume={data.volume}
+        albumcover={data.albumcover}
+      />
+    );
   }
 
   if (data.type === 'graph') {

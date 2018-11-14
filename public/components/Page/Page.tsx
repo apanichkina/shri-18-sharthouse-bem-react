@@ -6,7 +6,7 @@ const cnPage = cn('Page');
 
 export interface IPageEventsProps {
   className?: string;
-  title?: string
+  title?: string;
 }
 
 export const Page: React.SFC<IPageEventsProps> = (props) => (

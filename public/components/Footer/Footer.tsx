@@ -22,7 +22,7 @@ const getLinks = (links: ILink[]) => {
 
 export interface IFooterProps {
   className?: string;
-  links: ILink[]
+  links: ILink[];
 }
 
 export const Footer: React.SFC<IFooterProps> = (props) => (

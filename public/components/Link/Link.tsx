@@ -5,7 +5,7 @@ import './Link.css';
 const cnLink = cn('Link');
 
 export interface ILinkProps {
-  className?: string
+  className?: string;
   href: string;
   text: string;
 }
