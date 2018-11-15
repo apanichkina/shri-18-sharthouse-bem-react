@@ -1,6 +1,6 @@
 import React from 'react';
 import {cn} from '@bem-react/classname';
-import './Header.css';
+import './Header@desktop.css';
 
 const cnHeader = cn('Header');
 
@@ -22,7 +22,7 @@ export interface IHeaderProps {
   links: INavData[];
 }
 
-export const Header: React.SFC<IHeaderProps> = (props) => (
+export const HeaderDesktop: React.SFC<IHeaderProps> = (props) => (
   <header className={cnHeader(null, [props.className])}>
     <span className={cnHeader('Logo')}>
       <a href="#" target="_blank"/>
