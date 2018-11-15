@@ -15,20 +15,6 @@
   box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5);
 }
 
-.Card_size_s {
-  grid-column: auto / span 2;
-}
-
-.Card_size_m {
-  grid-column: auto / span 3;
-  grid-row: auto / span 2;
-}
-
-.Card_size_l {
-  grid-column: auto / span 4;
-  grid-row: auto / span 3;
-}
-
 .Card-Header {
   background-color: inherit;
   padding: 20px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {cn} from '@bem-react/classname';
-// import {withBemMod} from '@bem-react/core';
+import { ModBody } from '@bem-react/core';
 import {Icon} from '../Icon/Icon';
 import {Chart} from '../Chart/Chart';
 import {Music} from '../Music/Music';
@@ -12,7 +12,6 @@ const cnCard = cn('Card');
 export interface ICardProps {
   className?: string;
   mode: 'info' | 'critical';
-  size: 's' | 'm' | 'l';
   date: string;
   title: string;
   source: string;
@@ -61,12 +60,12 @@ const getBody = (props: ICardProps) => {
   );
 };
 
-export const CardComponent: React.SFC<ICardProps> = (props) => {
+export const CardComponent: ModBody<ICardProps> = (Base, props) => {
   const needBody = props.description || props.data;
   const isCritical = props.mode === 'critical';
 
   return (
-    <div className={cnCard({size: props.size}, [props.className])}>
+    <div className={cnCard(null, [props.className])}>
       <div className={cnCard('Header', {mode: props.mode})}>
         <div className={cnCard('TitleBlock')}>
           <Icon
@@ -93,5 +92,3 @@ export const CardComponent: React.SFC<ICardProps> = (props) => {
     </div>
   );
 };
-
-// export const CardComponent = withBemMod(cnCard(), {size: 'l'})(Card);

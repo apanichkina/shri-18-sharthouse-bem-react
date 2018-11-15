@@ -1,0 +1,4 @@
+.Card_size_l {
+  grid-column: auto / span 4;
+  grid-row: auto / span 3;
+}

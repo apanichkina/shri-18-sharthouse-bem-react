@@ -1,6 +1,6 @@
 import React from 'react';
 import {cn} from '@bem-react/classname';
-import {CardComponent} from '../Card/Card';
+import {CardComposed} from '../Card';
 import eventData from '../../mocks/events.json';
 import {ICardContent} from '../../interfaces/card';
 import './PageEvents.css';
@@ -9,7 +9,7 @@ const cnPageEvents = cn('PageEvents');
 
 const events = eventData.events as ICardContent[];
 const cards = events.map((el, i) => (
-  <CardComponent
+  <CardComposed
     key={i}
     title={el.title}
     mode={el.type}
