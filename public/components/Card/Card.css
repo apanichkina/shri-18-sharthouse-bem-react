@@ -81,3 +81,18 @@
 .Card-Data {
 
 }
+
+@media (max-width: 720px) {
+  .Card-Header {
+    padding: 16px;
+  }
+
+  .Card-Header_mode_critical {
+    padding-bottom: 36px;
+  }
+
+  .Card-Body {
+    padding: 16px;
+    margin-top: -16px;
+  }
+}

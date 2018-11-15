@@ -2,3 +2,9 @@
   grid-column: auto / span 3;
   grid-row: auto / span 2;
 }
+
+@media (max-width: 768px) {
+  .Card_size_m {
+    grid-column: auto / span 2;
+  }
+}

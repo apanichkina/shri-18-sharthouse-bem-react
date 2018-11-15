@@ -40,3 +40,28 @@
   padding: 0 40px;
 }
 
+@media (max-width: 1199px) {
+  .App-Content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 991px) {
+  .App-Content {
+    width: auto;
+    margin: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .App-Header,
+  .App-Content,
+  .App-Footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .App-Content {
+    padding-top: 64px;
+  }
+}
