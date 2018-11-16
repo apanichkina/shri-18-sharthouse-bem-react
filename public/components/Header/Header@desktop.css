@@ -1,4 +1,4 @@
-.Header {
+.Header-Desktop {
   height: 92px;
   box-shadow: 0 1px 0 0 #f0f0f0;
   box-sizing: border-box;
@@ -6,15 +6,6 @@
   display: inline-grid;
   grid-template-columns: 112px auto;
   align-items: center;
-}
-
-.Header-Logo {
-  display: inline-block;
-  height: 40px;
-  width: 112px;
-  position: relative;
-  background: url('../images/logo.svg') no-repeat left top;
-  vertical-align: top;
 }
 
 .Header-Nav {

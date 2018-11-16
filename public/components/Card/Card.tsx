@@ -1,10 +1,6 @@
 import React from 'react';
 import {cn} from '@bem-react/classname';
-import { ModBody } from '@bem-react/core';
 import {Icon} from '../Icon/Icon';
-import {Chart} from '../Chart/Chart';
-import {Music} from '../Music/Music';
-import {prepareDataForChart} from '../../utils/chart';
 import './Card.css';
 
 const cnCard = cn('Card');
@@ -16,79 +12,48 @@ export interface ICardProps {
   title: string;
   source: string;
   description: string | null;
-  data?: any;
   icon: string;
 }
 
-const getData = (data: any) => {
-  if (!data) {
-    return null;
-  }
-
-  if (data.albumcover) {
-    return (
-      <Music
-        artist={data.artist}
-        name={data.track.name}
-        length={data.track.length}
-        volume={data.volume}
-        albumcover={data.albumcover}
-      />
-    );
-  }
-
-  if (data.type === 'graph') {
-    const parsedData: Chart.ChartDataSets[] = prepareDataForChart(data.values);
-
-    return <Chart datasets={parsedData} width={200} height={200}/>;
-  }
-  return (
-    JSON.stringify(data)
-  );
-};
-
-const getBody = (props: ICardProps) => {
+const getBody = (desc: string | null, data: React.ReactNode) => {
   return (
     <div className={cnCard('Body')}>
-      <div className={cnCard('Description')}>
-        {props.description}
-      </div>
-      <div className={cnCard('Data')}>
-        {getData(props.data)}
-      </div>
+      {desc && <div className={cnCard('Description')}>{desc}</div>}
+      {data && <div className={cnCard('Data')}>{data}</div>}
     </div>
   );
 };
 
-export const CardComponent: ModBody<ICardProps> = (Base, props) => {
-  const needBody = props.description || props.data;
-  const isCritical = props.mode === 'critical';
+export const CardComponent: React.SFC<ICardProps> = (props) => {
+  const {description, children, className, mode, icon, title, source, date} = props;
+  const needBody = description || children;
+  const isCritical = mode === 'critical';
 
   return (
-    <div className={cnCard(null, [props.className])}>
-      <div className={cnCard('Header', {mode: props.mode})}>
+    <div className={cnCard(null, [className])}>
+      <div className={cnCard('Header', {mode})}>
         <div className={cnCard('TitleBlock')}>
           <Icon
-            name={props.icon}
+            name={icon}
             size="m"
             white={isCritical}
-            alt={props.icon}
+            alt={icon}
             className={cnCard('Icon')}
           />
           <div className={cnCard('Title')}>
-            {props.title}
+            {title}
           </div>
         </div>
         <div className={cnCard('SubtitleBlock')}>
           <span className={cnCard('Source')}>
-            {props.source}
+            {source}
           </span>
           <span className={cnCard('Time')}>
-            {props.date}
+            {date}
           </span>
         </div>
       </div>
-      {needBody ? getBody(props) : null}
+      {needBody ? getBody(description, children) : null}
     </div>
   );
 };

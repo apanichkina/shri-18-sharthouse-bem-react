@@ -1,5 +1,6 @@
 import React from 'react';
 import {cn} from '@bem-react/classname';
+import {HeaderLogo} from './Logo/Header-Logo';
 import './Header@desktop.css';
 
 const cnHeader = cn('Header');
@@ -23,10 +24,8 @@ export interface IHeaderProps {
 }
 
 export const HeaderDesktop: React.SFC<IHeaderProps> = (props) => (
-  <header className={cnHeader(null, [props.className])}>
-    <span className={cnHeader('Logo')}>
-      <a href="#" target="_blank"/>
-    </span>
+  <header className={cnHeader('Desktop', [props.className])}>
+    <HeaderLogo/>
     <nav className={cnHeader('Nav')}>
       <ul className={cnHeader('HavContent')}>
         {getLinks(props.links)}

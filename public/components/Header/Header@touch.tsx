@@ -1,5 +1,6 @@
 import React from 'react';
 import {cn} from '@bem-react/classname';
+import {HeaderLogo} from './Logo/Header-Logo';
 import './Header@touch.css';
 
 const cnHeader = cn('Header');
@@ -9,9 +10,7 @@ export interface IHeaderProps {
 }
 
 export const HeaderTouch: React.SFC<IHeaderProps> = (props) => (
-  <header className={cnHeader(null, [props.className])}>
-    <span className={cnHeader('Logo')}>
-      <a href="#" target="_blank"/>
-    </span>
+  <header className={cnHeader('Touch', [props.className])}>
+    <HeaderLogo/>
   </header>
 );

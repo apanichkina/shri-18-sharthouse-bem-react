@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import {AppDesktop} from './components/App/App@desktop';
 import {AppTouch} from './components/App/App@touch';
+import {AppDesktop} from './components/App/App@desktop';
 import {isMobile} from 'react-device-detect';
 
 ReactDOM.render(
